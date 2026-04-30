@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: radial-gradient(circle at center, rgba(79,140,255,0.08), transparent 50%), #000;
+  color: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px;
+}
+
+section {
+  padding: 64px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  display: flex;
+  gap: 40px;
+}
+
+.hero-left {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.hero p {
+  color: #A1A1AA;
+}
+
+.tagline {
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(45deg,#4F8CFF,#8B5CF6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* 🔥 IMPROVED BLUR ORB */
+.hero-visual {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 380px;
+  height: 380px;
+  pointer-events: none;
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.hero-visual::before {
+  background: radial-gradient(circle, rgba(79,140,255,0.4), transparent 70%);
+  filter: blur(80px);
+}
+
+.hero-visual::after {
+  background: radial-gradient(circle, rgba(139,92,246,0.35), transparent 70%);
+  filter: blur(100px);
+  transform: translate(40px, 40px);
+}
+
+/* BUTTONS */
+.btn {
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.primary {
+  background: linear-gradient(45deg,#4F8CFF,#8B5CF6);
+  color: white;
+}
+
+/* VIEW DETAILS BUTTON */
+.secondary {
+  background: transparent;
+  border: none;
+  color: #A1A1AA;
+  position: relative;
+  padding-left: 0;
+}
+
+.secondary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(45deg,#4F8CFF,#8B5CF6);
+  transition: 0.3s;
+}
+
+.secondary:hover::after {
+  width: 100%;
+}
+
+.secondary:hover {
+  color: #fff;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #0A0F1A;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 20px;
+  border-radius: 16px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.small {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.hidden {
+  display: none;
+}
+
+.divider {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin: 12px 0;
+}
+
+/* THINKING */
+.thinking-grid {
+  display: grid;
+  gap: 14px;
+  max-width: 700px;
+}
+
+.think-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #A1A1AA;
+}
+
+.think-card span {
+  width: 4px;
+  height: 18px;
+  background: linear-gradient(45deg,#4F8CFF,#8B5CF6);
+  border-radius: 2px;
+}
+
+/* 🚀 THINKING BEYOND FIX */
+.vision-center {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.8;
+  color: #A1A1AA;
+}
+
+.vision-main {
+  font-size: 18px;
+}
+
+.vision-highlight {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 16px 0;
+  background: linear-gradient(45deg,#4F8CFF,#8B5CF6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="hero-left">
+
+<div class="tagline">
+Building AI products to fix how students learn and how decisions are made
+</div>
+
+<h1>Building AI tools to solve real problems</h1>
+
+<p>
+I’m a Class 11 student and a JEE 2028 aspirant, building AI products while preparing for exams.
+</p>
+
+<p class="small">Still early. Still building. Focused on impact.</p>
+
+<button class="btn primary" onclick="scrollToSection('projects')">
+Explore Projects
+</button>
+
+<button class="btn secondary" onclick="scrollToSection('contact')">
+Get in touch
+</button>
+
+<p class="small">2 AI products in progress • Education + Industrial Intelligence</p>
+
+</div>
+
+<div class="hero-visual"></div>
+
+</section>
+
+<!-- ABOUT -->
+<section>
+
+<h2>About Me</h2>
+
+<p style="max-width:700px;color:#A1A1AA;line-height:1.6">
+I’m a Class 11 student and a JEE 2028 aspirant, currently balancing exam preparation with building AI products.
+</p>
+
+<p style="max-width:700px;color:#A1A1AA;line-height:1.6">
+I’m working on <span style="color:#fff">StudyAtoZ AI</span>, an exam-focused platform that generates tests, notes, and explanations.
+</p>
+
+<p style="max-width:700px;color:#A1A1AA;line-height:1.6">
+I started building to solve real-world problems—especially in how students learn.
+</p>
+
+<p style="max-width:700px;color:#A1A1AA;line-height:1.6">
+Still early, but actively building and learning by doing.
+</p>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+
+<h2>Projects I’m Building</h2>
+<p class="small">Early-stage AI products focused on real problems</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="small">BUILDING</div>
+<h3>StudyAtoZ AI</h3>
+<p class="small">AI for Exam Preparation</p>
+
+<p><b>Built to fix how students actually study.</b></p>
+
+<p class="small">Students memorize without understanding.</p>
+
+<button class="btn secondary" onclick="toggle('study')">
+View Details ↓
+</button>
+
+<div id="study" class="hidden">
+<div class="divider"></div>
+
+<p><b>Problem:</b> Students waste time but lack understanding</p>
+<p><b>Solution:</b> Structured AI learning + testing</p>
+
+<ul>
+<li>Improving test accuracy</li>
+<li>Better explanations</li>
+<li>Faster revision</li>
+</ul>
+
+<p class="small">Focused on real exam performance, not content generation.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="small">CONCEPT</div>
+<h3>Industrial Weather</h3>
+<p class="small">Industrial Intelligence</p>
+
+<p><b>Not another weather app — a decision system.</b></p>
+
+<p class="small">Raw data doesn’t help decisions.</p>
+
+<button class="btn secondary" onclick="toggle('weather')">
+View Details ↓
+</button>
+
+<div id="weather" class="hidden">
+<div class="divider"></div>
+
+<p><b>Problem:</b> Raw data is not actionable</p>
+<p><b>Solution:</b> AI-driven insights</p>
+
+<ul>
+<li>Real-time alerts</li>
+<li>Risk analysis</li>
+<li>Planning insights</li>
+</ul>
+
+<p class="small">Designed for decision-making, not just forecasts.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- THINKING -->
+<section>
+
+<h3 class="small">THINKING</h3>
+<h2>How I Think</h2>
+
+<div class="thinking-grid">
+<div class="think-card"><span></span>Start with the real problem, not the idea</div>
+<div class="think-card"><span></span>Ship fast, fix fast, repeat</div>
+<div class="think-card"><span></span>If it doesn't help someone, it doesn't matter</div>
+</div>
+
+</section>
+
+<!-- 🚀 THINKING BEYOND -->
+<section>
+
+<h2 style="text-align:center;">Thinking Beyond Small Projects</h2>
+
+<div class="vision-center">
+
+<p class="vision-main">
+Building AI tools for real problems
+</p>
+
+<p class="vision-highlight">
+Focused on education and industry
+</p>
+
+<p>
+Starting small, aiming big
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="text-align:center">
+
+<h3 style="color:#6B7280;font-size:12px;letter-spacing:2px;">CONTACT</h3>
+
+<h2>Let’s connect</h2>
+
+<p class="small" style="max-width:500px;margin:auto;">
+I’m currently building and learning. Open to feedback, ideas, and meaningful conversations.
+</p>
+
+<button class="btn primary">
+Get in touch
+</button>
+
+<p class="small">example@email.com</p>
+
+<p class="small">
+If you're building something interesting, I’d like to see it.
+</p>
+
+<div class="divider"></div>
+
+<p class="small">Still early. Still building.</p>
+
+<p class="small">© 2026 • Built while preparing for JEE 2028</p>
+
+</section>
+
+</div>
+
+<script>
+let activeProject = null;
+
+function toggle(id){
+  const el = document.getElementById(id);
+
+  if(activeProject === id){
+    el.classList.add("hidden");
+    activeProject = null;
+    return;
+  }
+
+  if(activeProject){
+    document.getElementById(activeProject).classList.add("hidden");
+  }
+
+  el.classList.remove("hidden");
+  activeProject = id;
+}
+
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
